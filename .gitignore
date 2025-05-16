@@ -1,0 +1,16 @@
+# Ignorar node_modules (no subir al repositorio)
+node_modules/
+todo-app/node_modules/
+server/node_modules/
+
+# Ignorar archivos de entorno (sensibles)
+.env
+todo-app/.env
+
+# Ignorar logs y archivos temporales
+*.log
+*.tmp
+
+# Si usas IDE/Editores (opcional)
+.vscode/
+.idea/
