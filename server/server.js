@@ -15,7 +15,7 @@ const corsOptions = {
   origin: [
     process.env.FRONTEND_URL,
     'http://localhost:3000',
-    'https://todo-dxvzto71b-yessi-vazquezs-projects.vercel.app'
+    'https://todolist-yessi-c021cb750183.herokuapp.com/'
   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
