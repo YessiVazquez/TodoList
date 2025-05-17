@@ -1,7 +1,7 @@
 // src/services/todoService.js
 import axios from "axios";
 
-const API_URL = "https://todo-backend-production-f566.up.railway.app/api";
+const API_URL = "http://localhost:5000/api/todos";
 
 const getAuthHeader = () => {
   const user = JSON.parse(localStorage.getItem('user'));
@@ -11,13 +11,12 @@ const getAuthHeader = () => {
   return {};
 };
 
-// Servicio de TODOS (todoService.js)
-export const getTodos = () => axios.get(`${API_URL}/todos`, { headers: getAuthHeader() });
-export const toggleTodo = (id) => axios.patch(`${API_URL}/todos/${id}/toggle`, {}, { headers: getAuthHeader() });
-export const deleteTodo = (id) => axios.delete(`${API_URL}/todos/${id}`, { headers: getAuthHeader() });
-export const clearCompleted = () => axios.delete(`${API_URL}/todos/completed`, { headers: getAuthHeader() });
+export const getTodos = () => axios.get(API_URL, { headers: getAuthHeader() });
+export const toggleTodo = (id) => axios.patch(`${API_URL}/${id}/toggle`, {}, { headers: getAuthHeader() });
+export const deleteTodo = (id) => axios.delete(`${API_URL}/${id}`, { headers: getAuthHeader() });
+export const clearCompleted = () => axios.delete(`${API_URL}/completed`, { headers: getAuthHeader() });
 export const addTodo = (title, categoryId) => 
-  axios.post(`${API_URL}/todos`, { title, category_id: categoryId }, { headers: getAuthHeader() });
+  axios.post(API_URL, { title, category_id: categoryId }, { headers: getAuthHeader() });
 
 export const getCategories = () => 
-  axios.get(`${API_URL}/todos/categories`, { headers: getAuthHeader() });
+  axios.get(`${API_URL}/categories`, { headers: getAuthHeader() });

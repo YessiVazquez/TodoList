@@ -1,22 +1,15 @@
-// src/services/authService.js
 import axios from "axios";
 
-const API_URL = "https://todo-backend-production-f566.up.railway.app/api";
+const API_URL = "http://localhost:5000/api/auth";
 
 export const login = async (credentials) => {
-  const response = await axios.post(`${API_URL}/auth/login`, credentials);
-  // Asegúrate de guardar el token y datos del usuario
-  localStorage.setItem('user', JSON.stringify({
-    token: response.data.token,
-    id: response.data.id,
-    username: response.data.username
-  }));
+  const response = await axios.post(`${API_URL}/login`, credentials);
   return response.data;
 };
 
 export const register = async (userData) => {
   try {
-    const response = await axios.post(`${API_URL}/auth/register`, userData);
+    const response = await axios.post(`${API_URL}/register`, userData);
     return response.data;
   } catch (err) {
     return {
