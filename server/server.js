@@ -13,13 +13,13 @@ const app = express();
 // Configuración CORS (mantén tu configuración actual)
 const corsOptions = {
   origin: [
-    process.env.FRONTEND_URL,
-    'http://localhost:3000',
-    'https://todolist-yessi-c021cb750183.herokuapp.com/'
+    'https://todolist-t7qq.onrender.com',
+    'http://localhost:3000'
   ],
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
-  credentials: true
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,
+  optionsSuccessStatus: 200 // Para navegadores antiguos
 };
 
 // Middlewares
