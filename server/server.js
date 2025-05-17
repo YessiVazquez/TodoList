@@ -13,7 +13,7 @@ const app = express();
 // Configuración CORS (mantén tu configuración actual)
 const corsOptions = {
   origin: [
-    'https://todolist-t7qq.onrender.com',
+    'https://todolist-gf1m.onrender.com',
     'http://localhost:3000'
   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
